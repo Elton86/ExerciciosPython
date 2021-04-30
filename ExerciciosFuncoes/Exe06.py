@@ -5,3 +5,25 @@ a função para efetuar as conversões terá um parâmetro formal para registrar
 permita que o usuário repita esse cálculo para novos valores de entrada todas as vezes que desejar."""
 
 
+def formata_hora(hora, min):
+    turno = ""
+    if hora > 12:
+        hora -= 12
+        turno += "P"
+    else:
+        turno += "A"
+    horario = str(hora) + ":" + min + turno
+    imprime_hora(horario)
+
+
+def imprime_hora(horario):
+    print(horario)
+
+
+while True:
+    hora = int(input("Digte a hora [-1 p/ sair] : "))
+    min = input("Digte os minutos: ")
+    if hora == -1:
+        break
+    else:
+        formata_hora(hora, min)
